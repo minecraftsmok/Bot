@@ -3,7 +3,6 @@ const { MessageEmbed, User } = require("discord.js");
 module.exports = {
   name: "profil",
   desciption: "Info embed",
-  cooldown: 18,
   run(msg,args,con) 
   {
     const member = msg.mentions.members.first();
@@ -15,17 +14,17 @@ module.exports = {
         let c;
         switch (n) 
         {
-          case 1:
+          case "warrior":
             c='Warrior';
             break;
-          case 2:
+          case "archer":
             c='Archer';
             break;
-          case 3:
+          case "mag":
             c='Mag';
             break;
           default:
-          c='Administrator';
+          c='???';
         }
         console.log(member.user.username);
         const embed = new MessageEmbed()
