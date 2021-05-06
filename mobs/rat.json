@@ -1,0 +1,12 @@
+{
+	"Name":"Rat",
+	"Type": "warrior",
+	"HP":6,
+	"Lvl": 1,
+	"MinDamage": 1,
+	"MaxDamage": 3,
+	"Strength": 6,
+	"Dexterity": 4,
+	"Intelligence": 0,
+	"Armor":10
+}

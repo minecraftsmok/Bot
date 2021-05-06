@@ -19,17 +19,17 @@ module.exports = {
         const reactions = await mesg.awaitReactions((reaction, user) => user.id === msg.author.id && (reaction.emoji.name === one || reaction.emoji.name === two || reaction.emoji.name === three), {time: 5000})
         if(reactions.has(one)&&!reactions.has(two)&&!reactions.has(three))
         {
-          con.query(`INSERT INTO characters (id, id_user, class, hp, str, dex, inte, gold) VALUES (NULL, ${msg.author.id}, 'warrior', '100', '10', '10', '10', '0');`);
+          con.query(`INSERT INTO characters (id, id_user, class, lvl, weapon hp, str, dex, inte, gold) VALUES (NULL, ${msg.author.id}, 'warrior', '1', '7', '10', '10', '10', '10', '0');`);
           return msg.reply('You have just become a warrior');
         }
         else if(reactions.has(two)&&!reactions.has(one)&&!reactions.has(three))
         {
-          con.query(`INSERT INTO characters (id, id_user, class, hp, str, dex, inte, gold) VALUES (NULL, ${msg.author.id}, 'archer', '80', '10', '10', '10', '0');`);
+          con.query(`INSERT INTO characters (id, id_user, class, lvl, hp, str, dex, inte, gold) VALUES (NULL, ${msg.author.id}, 'archer', '1', '6', '10', '10', '10', '10', '0');`);
           return msg.reply('You have just become an archer');
         }
         else if(reactions.has(three)&&!reactions.has(two)&&!reactions.has(one))
         {
-          con.query(`INSERT INTO characters (id, id_user, class, hp, str, dex, inte, gold) VALUES (NULL, ${msg.author.id}, 'mag', '58', '10', '10', '10', '0');`);
+          con.query(`INSERT INTO characters (id, id_user, class, lvl, hp, str, dex, inte, gold) VALUES (NULL, ${msg.author.id}, 'mag', '1', '8', '10', '10', '10', '10', '0');`);
           return msg.reply('You have just become a mag');
         }
     return msg.reply('Please select warrior, mag or archer');

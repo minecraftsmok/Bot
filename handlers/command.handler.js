@@ -76,7 +76,6 @@ module.exports = (client) => {
           const now = Date.now()
           const timestaps = cooldowns.get(cmdName)
           const cooldownAmount = (cmd.cooldown || 3)*1000
-          console.log(cmd.cooldown)
 
           if(timestaps.has(msg.author.id))
           {
@@ -94,6 +93,7 @@ module.exports = (client) => {
           }, cooldownAmount)
           try
           {
+              console.log(cmd)
               cmd.run(msg, args, con)
           } catch(error) 
           {
